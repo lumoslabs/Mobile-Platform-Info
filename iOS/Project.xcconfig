@@ -1,0 +1,3 @@
+OFXGENERIC_PATH = "../addons/ofxGeneric/"
+
+#include "../addons/ofxGeneric/Project.xcconfig"
