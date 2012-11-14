@@ -26,7 +26,7 @@ int main()
     ofLLogVerbose( "Starting app..." );
 
     ofPtr< PlatformInfo > app( PlatformInfo::getInstance() );
-    ofPtr< ofAppBaseWindow > window( new ofxAppGenericWindow() );
+    ofPtr< ofAppBaseWindow > window( new ofxAppGenericWindow( true ) );
     
     // TODO: don't use ofSetupOpenGL
     ofSetupOpenGL( window, 1024, 768, OF_FULLSCREEN );

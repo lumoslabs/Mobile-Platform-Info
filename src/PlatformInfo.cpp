@@ -8,6 +8,8 @@
 #include "PlatformInfo.h"
 #include "InfoView.h"
 
+#include "ofxGenericException.h"
+
 PlatformInfo::PlatformInfo()
 {
 }
