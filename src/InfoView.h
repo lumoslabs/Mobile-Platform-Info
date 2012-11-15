@@ -9,11 +9,9 @@
 #pragma once
 
 #include "ofxGenericView.h"
-#include "ofxGenericImageView.h"
-#include "ofxGenericEditTextView.h"
-#include "ofxGenericActivityView.h"
-#include "ofxGenericButtonView.h"
-#include "ofxGenericTextView.h"
+
+class ofxGenericScrollView;
+class ofxGenericTextView;
 
 class InfoView : public ofxGenericView
 {
@@ -22,7 +20,9 @@ public:
 
     virtual void didLoad();
     
-protected:    
+protected:
+    ofPtr< ofxGenericScrollView > _contents;
+    
     ofPtr< ofxGenericTextView > _multitaskingSupported;
     
     ofPtr< ofxGenericTextView > _deviceName;

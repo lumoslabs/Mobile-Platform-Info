@@ -8,6 +8,9 @@
 
 #include "InfoView.h"
 
+#include "ofxGenericScrollView.h"
+#include "ofxGenericTextView.h"
+
 #include "ofxGenericPlatform.h"
 
 #define INFO_VIEW_HEIGHT 40
@@ -26,12 +29,15 @@ void InfoView::didLoad()
     setBackgroundColor( ofColor( 191, 229, 248 ) );
     
     float yLocation = 0.0f;
-    string isSupported;
-    if ( ofxGenericPlatform::multitaskingSupported() )
-        isSupported = "Yes";
-    else 
-        isSupported = "No";
-    _multitaskingSupported = InfoView::createTextView( yLocation, "Multitasking Supported: " + isSupported );
+    
+    _contents = ofxGenericScrollView::create( getFrame( ofPoint( 0, 0 ) ) );
+    if ( _contents )
+    {
+        _contents->setAutoContentSizeToFit( true );
+        addChildView( _contents );
+    }
+    
+    _multitaskingSupported = InfoView::createTextView( yLocation, "Multitasking Supported: " + ofxGToString( ofxGenericPlatform::multitaskingSupported() ) );
     
     _deviceName = InfoView::createTextView( yLocation, "Device Name: " + ofxGenericPlatform::deviceName() );
     
@@ -45,7 +51,7 @@ void InfoView::didLoad()
     
     _cpuFrequency = InfoView::createTextView( yLocation, "Total Memory: " + ofToString( ofxGenericPlatform::totalMemory() ) );
     
-    _cpuFrequency = InfoView::createTextView( yLocation, "Mac Addres: " + ofxGenericPlatform::macAddress() );
+    _cpuFrequency = InfoView::createTextView( yLocation, "Mac Address: " + ofxGenericPlatform::macAddress() );
     
     _operatingSystemName = InfoView::createTextView( yLocation, "Operating System Name: " + ofxGenericPlatform::operatingSystemName() );
     
@@ -67,14 +73,18 @@ void InfoView::didLoad()
 
 ofPtr< ofxGenericTextView > InfoView::createTextView( float& yLocation, string text )
 {
-    ofPtr< ofxGenericTextView > view  = ofxGenericTextView::create( ofRectangle( 20, yLocation, 300, INFO_VIEW_HEIGHT ) );
-    if ( view )
+    ofPtr< ofxGenericTextView > view;
+    if ( _contents )
     {
-        view->setTextAlignment(ofxGenericTextHorizontalAlignmentCenter );
-        view->setAutosizeFontToFitText( ofxGenericViewAutoresizingFull );
-        view->setText( text );
-        addChildView( view );
-        yLocation += INFO_VIEW_HEIGHT;
+        view = ofxGenericTextView::create( ofRectangle( _contents->getFrame().width / 2 - 300 / 2, yLocation, 300, INFO_VIEW_HEIGHT ) );
+        if ( view )
+        {
+            view->setTextAlignment(ofxGenericTextHorizontalAlignmentCenter );
+            view->setAutosizeFontToFitText( ofxGenericViewAutoresizingFull );
+            view->setText( text );
+            _contents->addChildView( view );
+            yLocation += INFO_VIEW_HEIGHT;
+        }
     }
     return view;
 }
