@@ -61,6 +61,12 @@ void InfoView::didLoad()
     
 //    _batteryLevel = InfoView::createTextView( yLocation += 40 );
 //    _batteryLevel->setText( "Battery Level: " + ofxGenericPlatform::getInstance()->batteryLevel() );
+    
+    _isRetinaDisplay = InfoView::createTextView( yLocation );
+    _isRetinaDisplay->setText( "Is Retina Display: " + ofxGToString( ofxGenericPlatform::isRetinaDisplay() ) );
+    
+    _is4InchDisplay = InfoView::createTextView( yLocation );
+    _is4InchDisplay->setText( "Is 4 Inch Display: " + ofxGToString( ofxGenericPlatform::is4InchDisplay() ) );
 }
 
 ofPtr< ofxGenericTextView > InfoView::createTextView( float& yLocation )

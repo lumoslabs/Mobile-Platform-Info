@@ -24,15 +24,23 @@ public:
     
 protected:    
     ofPtr< ofxGenericTextView > _multitaskingSupported;
+    
     ofPtr< ofxGenericTextView > _deviceName;
     ofPtr< ofxGenericTextView > _deviceModel;
     ofPtr< ofxGenericTextView > _deviceModelVersion;
+    
     ofPtr< ofxGenericTextView > _operatingSystemName;
     ofPtr< ofxGenericTextView > _operatingSystemGroupName;
     ofPtr< ofxGenericTextView > _operatingSystemVersion;
+    
     ofPtr< ofxGenericTextView > _uniqueIdentifier;
 //    ofPtr< ofxGenericTextView > _orientation;
     ofPtr< ofxGenericTextView > _batteryLevel;
+    
+#if TARGET_OS_IPHONE
+    ofPtr< ofxGenericTextView > _isRetinaDisplay;
+    ofPtr< ofxGenericTextView > _is4InchDisplay;
+#endif
     
     ofPtr< ofxGenericTextView > createTextView( float& yLocation );
 };
