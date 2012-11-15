@@ -29,6 +29,12 @@ protected:
     ofPtr< ofxGenericTextView > _deviceModel;
     ofPtr< ofxGenericTextView > _deviceModelVersion;
     
+    ofPtr< ofxGenericTextView > _cpuFrequency;
+    ofPtr< ofxGenericTextView > _cpuCount;
+    ofPtr< ofxGenericTextView > _totalMemory;
+    
+    ofPtr< ofxGenericTextView > _macAddress;
+    
     ofPtr< ofxGenericTextView > _operatingSystemName;
     ofPtr< ofxGenericTextView > _operatingSystemGroupName;
     ofPtr< ofxGenericTextView > _operatingSystemVersion;
@@ -42,5 +48,5 @@ protected:
     ofPtr< ofxGenericTextView > _is4InchDisplay;
 #endif
     
-    ofPtr< ofxGenericTextView > createTextView( float& yLocation );
+    ofPtr< ofxGenericTextView > createTextView( float& yLocation, string text );
 };
