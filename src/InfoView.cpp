@@ -73,6 +73,7 @@ ofPtr< ofxGenericTextView > InfoView::createTextView( float& yLocation )
 {
     ofPtr< ofxGenericTextView > view  = ofxGenericTextView::create( ofRectangle( 20, yLocation, 300, INFO_VIEW_HEIGHT ) );
     view->setTextAlignment(ofxGenericTextHorizontalAlignmentCenter );
+    view->setAutosizeFontToFitText( ofxGenericViewAutoresizingFull );
     addChildView( view );
     yLocation += INFO_VIEW_HEIGHT;
     return view;
