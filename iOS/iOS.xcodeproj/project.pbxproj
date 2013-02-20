@@ -26,6 +26,7 @@
 		3C754166164C4B0B0074EF1C /* SharedProject.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3C754161164C4B0B0074EF1C /* SharedProject.xcconfig */; };
 		3C754167164C4B0B0074EF1C /* TestDistribution.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3C754162164C4B0B0074EF1C /* TestDistribution.xcconfig */; };
 		3C99C5EC165428F2004D4E7C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C99C5EB165428F2004D4E7C /* SystemConfiguration.framework */; };
+		3CBEBB8C16D49155008F9FC3 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBEBB8B16D49155008F9FC3 /* StoreKit.framework */; };
 		3CDECEA8156C1B2600E4F80B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDECEA6156C1B2600E4F80B /* Default.png */; };
 		3CDECEA9156C1B2600E4F80B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDECEA7156C1B2600E4F80B /* Default@2x.png */; };
 		5326AEA810A23A0500278DE6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5326AEA710A23A0500278DE6 /* CoreLocation.framework */; };
@@ -82,6 +83,7 @@
 		3C754162164C4B0B0074EF1C /* TestDistribution.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TestDistribution.xcconfig; sourceTree = "<group>"; };
 		3C99C5EB165428F2004D4E7C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3CA6DD191511908D00388936 /* PlatformInfo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PlatformInfo.entitlements; sourceTree = "<group>"; };
+		3CBEBB8B16D49155008F9FC3 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		3CDECEA6156C1B2600E4F80B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		3CDECEA7156C1B2600E4F80B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		5326AEA710A23A0500278DE6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -102,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CBEBB8C16D49155008F9FC3 /* StoreKit.framework in Frameworks */,
 				3C99C5EC165428F2004D4E7C /* SystemConfiguration.framework in Frameworks */,
 				3C2AAB0D14FD6378006A25CC /* libofxGeneric.a in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
@@ -133,6 +136,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				3CBEBB8B16D49155008F9FC3 /* StoreKit.framework */,
 				3C99C5EB165428F2004D4E7C /* SystemConfiguration.framework */,
 				3C624C8B14C60787009601B3 /* src */,
 				3C624C3714C6015F009601B3 /* addons */,
@@ -409,7 +413,7 @@
 					armv7,
 				);
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Lumos Labs, Inc.";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = c99;
@@ -428,7 +432,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				ONLY_ACTIVE_ARCH = NO;
-				PROVISIONING_PROFILE = "3C975A4E-6F17-4E14-95B5-51A431070493";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
